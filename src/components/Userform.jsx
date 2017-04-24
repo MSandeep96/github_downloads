@@ -15,7 +15,6 @@ class Userform extends Component {
 	}
 
 	resListener(err,details){
-		console.log(err+" "+details);
 		this.setState({
 			isLoading: false
 		});
@@ -24,9 +23,13 @@ class Userform extends Component {
 
 	startSearch(event) {
 		event.preventDefault();
+		if(this.state.isLoading){
+			return;
+		}
 		this.setState({
 			isLoading: true
 		});
+		this.props.newSearch();
 		var details = { username: this.state.username, project: this.state.project };
 		getDownloads(details, this.resListener);
 	}
