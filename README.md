@@ -2,6 +2,8 @@
 
 Check the number of downloads on your projects' assets [here](https://msandeep96.github.io/github_downloads).
 
+![Alt text](/screenshots/landing.PNG)
+
 Built with [React](https://facebook.github.io/react/) and [Create-React-App](https://github.com/facebookincubator/create-react-app)
 
 Src contains original source files.
