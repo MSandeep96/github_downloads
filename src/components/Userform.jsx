@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import getDownloads from "../../utils/getDownloads";
+import getDownloads from "../utils/getDownloads";
 // import Loading from "react-loading";
 
 class Userform extends Component {

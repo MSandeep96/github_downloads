@@ -89,7 +89,7 @@ function getMultiProjectDownloads(resp, callback) {
 
 				//when all projects have returned call the callback 
 				count += 1;
-				if (count == resp.length) {
+				if (count === resp.length) {
 					callback(undefined, downloads);
 				}
 			});

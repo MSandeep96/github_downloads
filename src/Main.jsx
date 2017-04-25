@@ -20,7 +20,6 @@ class Main extends Component {
 	}
 
 	resultListener(err, results) {
-		console.log(results);
 		if (err) {
 			this.setState({
 				errorOccured: true

@@ -8,9 +8,9 @@ class DownloadsPage extends Component {
 	}
 
 	defineRows(assets) {
-		return assets.map((asset) => {
+		return assets.map((asset,index) => {
 			return (
-				<tr>
+				<tr key={index}>
 					<td>{asset.name}</td>
 					<td>{asset.downloads}</td>
 				</tr>
@@ -22,20 +22,22 @@ class DownloadsPage extends Component {
 		if (this.props.data.length !== 0) {
 			return this.props.data.map((project) => {
 				return (
-					<div className="projectBox">
+					<div className="projectBox" key={project.name}>
 						<h1>{project.name}</h1>
 						<table>
-							<tr>
-								<th>Asset</th>
-								<th>Downloads</th>
-							</tr>
-							{this.defineRows(project.assets)}
+							<tbody>
+								<tr>
+									<th>Asset</th>
+									<th>Downloads</th>
+								</tr>
+								{this.defineRows(project.assets)}
+							</tbody>
 						</table>
 					</div>
 				);
 			});
-		}else{
-			return(
+		} else {
+			return (
 				<div className="projectBox">
 					<h1>No projects have assets.</h1>
 				</div>
