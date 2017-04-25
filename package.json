@@ -2,7 +2,7 @@
   "name": "github_downloads",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://msandeep96.github.io/githubdownloads",
+  "homepage": "https://msandeep96.github.io/github_downloads",
   "dependencies": {
     "axios": "^0.16.1",
     "react": "^15.5.4",
