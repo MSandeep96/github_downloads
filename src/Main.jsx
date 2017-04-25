@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Title from "./components/Title";
 import UserForm from "./components/Userform";
-import DownloadsPage from "./components/DownloadsPage";
+import Overlay from "./components/Overlay";
+
 class Main extends Component {
 
 
@@ -13,8 +14,9 @@ class Main extends Component {
 		};
 		this.showErrorMessage = this.showErrorMessage.bind(this);
 		this.resultListener = this.resultListener.bind(this);
-		this.getTable = this.getTable.bind(this);
+		this.showOverlay = this.showOverlay.bind(this);
 		this.newSearch = this.newSearch.bind(this);
+		this.closeOverlay = this.closeOverlay.bind(this);
 	}
 
 	resultListener(err, results) {
@@ -26,7 +28,7 @@ class Main extends Component {
 		} else {
 			this.setState({
 				hasResults: true,
-				data : results
+				data: results
 			});
 		}
 	}
@@ -38,19 +40,25 @@ class Main extends Component {
 		return null;
 	}
 
-	getTable() {
+	closeOverlay(){
+		this.setState({
+			hasResults : false
+		});
+	}
+
+	showOverlay() {
 		if (this.state.hasResults) {
 			return (
-				<DownloadsPage data={this.state.data}/>
+				<Overlay data={this.state.data} closeOverlay={this.closeOverlay}/>
 			);
-		}else{
+		} else {
 			return null;
 		}
 	}
 
-	newSearch(){
+	newSearch() {
 		this.setState({
-			errorOccured : false
+			errorOccured: false
 		});
 	}
 
@@ -59,10 +67,10 @@ class Main extends Component {
 			<div className="holder">
 				<div className="landing">
 					<Title title="Github Downloads" />
-					<UserForm resListener={this.resultListener} newSearch={this.newSearch}/>
+					<UserForm resListener={this.resultListener} newSearch={this.newSearch} />
 					{this.showErrorMessage()}
 				</div>
-				{this.getTable()}
+				{this.showOverlay()}
 			</div>
 		);
 	}

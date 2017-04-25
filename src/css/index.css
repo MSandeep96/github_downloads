@@ -16,7 +16,7 @@ body{
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #a7a7a7;
+	color:    #a7a7a7;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
    color:    #a7a7a7;
@@ -49,6 +49,7 @@ body{
 .searchbtn{
 	text-align: center;
 	width: 100%;
+	height: 50px;
 	margin-top : 20px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
@@ -89,18 +90,100 @@ body{
 }
 
 .loader {
-    border: 2px solid white; /* Light grey */
-    border-top: 2px solid grey; /* Blue */
-    border-radius: 50%;
-    width: 18px;
-    height:18px;
-    animation: spin 2s linear infinite;
+	border: 2px solid white; /* Light grey */
+	border-top: 2px solid grey; /* Blue */
+	border-radius: 50%;
+	width: 18px;
+	height:18px;
+	animation: spin 2s linear infinite;
 	margin: 0 auto;
 }
 
+.overlay-content{
+	width: 50%;
+	z-index: 2;
+	margin : 40px auto 20px auto;
+}
+
+table,th,td{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+table{
+	width: 100%;
+	margin: 20px auto;
+}
+
+th,td{
+	text-align: left;
+	padding : 5px;
+}
+
+table h1{
+	text-align: center;
+}
+
+.projectBox{
+	padding: 20px;
+	background-color: #f7f7f7;
+	margin-top: 20px;
+	border-radius: 3px;
+}
+
+.projectBox h1{
+	text-align: center;
+}
+
+.close {
+	display: block;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 32px;
+	height: 32px;
+	transition: transform .25s ease-in-out;
+}
+
+.close:hover {
+	transform: rotate(180deg);
+}
+
+.close:before {
+	content: "";
+	position: absolute;
+	display: block;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 32px;
+	height: 0;
+	border-top: 1px solid rgba(255,255,255,0.5);
+	transform: rotate(45deg);
+	transform-origin: center;
+}
+
+.close:after {
+	content: "";
+	position: absolute;
+	display: block;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 32px;
+	height: 0;
+	border-top: 1px solid rgba(255,255,255,0.5);
+	transform: rotate(-45deg);
+	transform-origin: center;
+}
+
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
 }
 
 h1{
@@ -110,4 +193,15 @@ h1{
 
 *{
 	box-sizing: border-box;
+}
+
+.overlay{
+	height: 100%;
+	width: 100%;
+	top : 0;
+	left : 0;
+	z-index: 1;
+	position: fixed;
+	background-color: #462421;
+	overflow-y: auto;
 }
