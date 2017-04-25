@@ -19,7 +19,7 @@ class DownloadsPage extends Component {
 	}
 
 	getView() {
-		if (this.props.data.length != 0) {
+		if (this.props.data.length !== 0) {
 			return this.props.data.map((project) => {
 				return (
 					<div className="projectBox">
@@ -34,6 +34,12 @@ class DownloadsPage extends Component {
 					</div>
 				);
 			});
+		}else{
+			return(
+				<div className="projectBox">
+					<h1>No projects have assets.</h1>
+				</div>
+			);
 		}
 	}
 
