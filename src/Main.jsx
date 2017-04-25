@@ -35,7 +35,7 @@ class Main extends Component {
 
 	showErrorMessage() {
 		if (this.state.errorOccured) {
-			return <Title title="No such User or Repository" />;
+			return <p className="errormsg">No such user or repository.</p>;
 		}
 		return null;
 	}

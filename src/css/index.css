@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico|Raleway');
+
 html,body,#root,.holder,.landing{
 	height: 100%;
 }
@@ -8,11 +11,12 @@ body{
 }
 
 .title{
+	font-family: "Pacifico",cursive;
 	color: white;
 	text-align: center;
 	padding: 40px 0;
 	font-weight: 300;
-	font-size: 30px;
+	font-size: 45px;
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -44,6 +48,13 @@ body{
 	padding: 15px;
 	border: 2px solid #d8d8d8;
 	margin-top: 20px;
+}
+
+.errormsg{
+	color: white;
+	text-align: center;
+	font-family: "Open Sans",sans-serif;
+	font-size: 20px;
 }
 
 .searchbtn{
@@ -118,6 +129,7 @@ table{
 th,td{
 	text-align: left;
 	padding : 5px;
+	font-family: "Open Sans",sans-serif;
 }
 
 table h1{
@@ -133,6 +145,7 @@ table h1{
 
 .projectBox h1{
 	text-align: center;
+	font-family: "Raleway",cursive;
 }
 
 .close {
